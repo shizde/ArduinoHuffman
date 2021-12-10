@@ -1,9 +1,6 @@
 /*
- * GNSS Lossless Compression Algorithm
- *
- * Created: 7/6/2021 12:39:59 PM
- * Authors: Rafael Perez & S�rgio Correia
- * Instituto Polit�cnico de Portalegre
+ * ArduinoHuffman 
+ * Authors: Rafael Perez
  */
 
 #ifndef arduinoHuffman_H_
