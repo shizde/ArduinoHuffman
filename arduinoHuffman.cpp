@@ -26,7 +26,7 @@ typedef struct {
 /************************************************************************/
 /* FREQUENCY PROCEDURES                                                 */
 /************************************************************************/
-/*! \fn void init_frequency(unsigned int frequency[])
+/* \fn void init_frequency(unsigned int frequency[])
     \brief Initialize the frequency array
     \param frequency[] Array to store the frequency of each character
 */
@@ -36,7 +36,7 @@ void init_frequency(unsigned int frequency[]){
 	}
 }
 
-/*! \fn void fill_frequency(unsigned char text[], unsigned int frequency[])
+/* \fn void fill_frequency(unsigned char text[], unsigned int frequency[])
     \brief Fill the frequencies of each character present in the JSON string analyzed
 	\param text[] Array to store each unique character present on string t be compressed
     \param frequency[] Array to store the frequency of each character
@@ -50,7 +50,7 @@ void fill_frequency(unsigned char text[], unsigned int frequency[]){
 }
 
 
-/*! \fn void print_frequency(unsigned int frequency[])
+/* \fn void print_frequency(unsigned int frequency[])
     \brief Display the frenquency array
     \param frequency[] Array to store the frequency of each character
 */
@@ -71,7 +71,7 @@ void print_frequency(unsigned int frequency[]){
 /************************************************************************/
 /* LIST PROCEDURES                                                      */
 /************************************************************************/
-/*! \fn void create_list(List *list_huff)
+/* \fn void create_list(List *list_huff)
     \brief Create the list in order to organize all the characters and their frequencies
     \param *list_huff Pointer to the list that will be used to organize the characters and their frequencies
 */
@@ -80,7 +80,7 @@ void create_list(List *list_huff){
 	list_huff->size = 0;
 }
 
-/*! \fn void insert_list(List *list_huff, Node *node)
+/* \fn void insert_list(List *list_huff, Node *node)
     \brief Create the list node by node
     \param *list_huff Pointer to the list that will be used to organize the characters and their frequencies
     \param *node Pointer to nodes used to create the list
@@ -107,7 +107,7 @@ void insert_list(List *list_huff, Node *node){
 }
 
 
-/*! \fn void fill_list(unsigned int frequency[], List *list_huff)
+/* \fn void fill_list(unsigned int frequency[], List *list_huff)
     \brief Insert elements in the list node by node
     \param frequency[] Pointer to array f frequency f each unique character
     \param *list_huff Pointer to the list that will be used to organize the characters and their frequencies
@@ -134,7 +134,7 @@ void fill_list(unsigned int frequency[], List *list_huff){
 }
 
 
-/*! \fn void print_list(List *list_huff)
+/* \fn void print_list(List *list_huff)
     \brief Display all the list by its elements
     \param *list_huff Pointer to the list that will be used to organize the characters and their frequencies
 */
@@ -156,7 +156,7 @@ void print_list(List *list_huff){
 /************************************************************************/
 /* HUFFMAN TREE                                                         */
 /************************************************************************/
-/*! \fn Node* remove_begin(List *list_huff)
+/* \fn Node* remove_begin(List *list_huff)
     \brief	Function to remove nodes once they are merged in order to organize the Binary Tree
     \param *list_huff Pointer to the list that will be used to organize the characters and their frequencies
 	
@@ -175,7 +175,7 @@ Node* remove_begin(List *list_huff){
 	return temporary;
 }
 
-/*! \fn Node* create_tree(List *list_huff)
+/* \fn Node* create_tree(List *list_huff)
     \brief	Function to create the Binary Tree
     \param *list_huff Pointer to the list that will be used to organize the characters and their frequencies
 	
@@ -206,7 +206,7 @@ Node* create_tree(List *list_huff){
 }
 
 
-/*! \fn void print_tree(Node *root, int size)
+/* \fn void print_tree(Node *root, int size)
     \brief	Function to display the Binary Tree
     \param size Height of each node in the tree
 	\param *root Pointer to the nodes present in the tree
@@ -229,7 +229,7 @@ void print_tree(Node *root, int size){
 /* HUFFMAN DICTIONARY                                                   */
 /************************************************************************/
 
-/*! \fn int tree_height(Node *root)
+/* \fn int tree_height(Node *root)
     \brief	Function to calculate the farthest node of the Binary Tree
 	\param *root Pointer to the nodes present in the tree
 */
@@ -250,7 +250,7 @@ int tree_height(Node *root){
 }
 
 
-/*! \fn char** dictionary_allocate(int columns)
+/* \fn char** dictionary_allocate(int columns)
     \brief	Function to allocate memory for the dictionary used in the binary transformation
 	\param int Height of the Binary Tree
 	
@@ -266,7 +266,7 @@ char** dictionary_allocate(int columns){
 }
 
 
-/*! \fn void create_dictionary(char **dict, Node *root, char *path, int columns)
+/* \fn void create_dictionary(char **dict, Node *root, char *path, int columns)
     \brief	Function to create the dictionary used in the binary transformation
 	\param **dict Dictionary to translate the string in char to binary codes
 	\param *root Pointer to the nodes present in the tree
@@ -292,7 +292,7 @@ void create_dictionary(char **dict, Node *root, char *path, int columns){
 }
 
 
-/*! \fn void create_dictionary(char **dict, Node *root, char *path, int columns)
+/* \fn void create_dictionary(char **dict, Node *root, char *path, int columns)
     \brief	Function to display the dictionary used in the binary transformation
 	\param **dict Dictionary to translate the string in char to binary codes
 	
@@ -314,7 +314,7 @@ void print_dictionary(char **dict){
 /* HUFFMAN ENCODING                                                     */
 /************************************************************************/
 
-/*! \fn int get_string_size(char **dict, unsigned char *text)
+/* \fn int get_string_size(char **dict, unsigned char *text)
     \brief	Function to calculate the string size
 	\param **dict Dictionary to translate the string in char to binary codes
 	\param *text Original text to be encoded
@@ -334,7 +334,7 @@ int get_string_size(char **dict, unsigned char *text){
 	return size + 1;
 }
 
-/*! \fn char* encode(char **dict, unsigned char *text)
+/* \fn char* encode(char **dict, unsigned char *text)
     \brief	Function to encode the text received
 	\param **dict Dictionary to translate the string in char to binary codes
 	\param *text Original text to be encoded
@@ -359,7 +359,7 @@ char* encode(char **dict, unsigned char *text){
 /************************************************************************/
 /* COMPACT                                                              */
 /************************************************************************/
-/*! \fn char* encode(char **dict, unsigned char *text)
+/* \fn char* encode(char **dict, unsigned char *text)
     \brief	Function to convert binary strings into binary values
 	\param **dict Dictionary to translate the string in char to binary codes
 	
@@ -381,7 +381,7 @@ char str2bin(char *dict){
 	return bbyte;
 }
 
-/*! \fn char* encode(char **dict, unsigned char *text)
+/* \fn char* encode(char **dict, unsigned char *text)
     \brief	Function to calculate the size of the dictionary
 	\param **dict Dictionary to translate the string in char to binary codes
 	
@@ -583,7 +583,7 @@ void compress_string(char *dataset)
 	encoded = encode(dict, text);
 	// SERIALDEBUG.println("ENCODED TEXT: ");
 	// SERIALDEBUG.println(encoded);
-	return (dict);
+	return dict;
 
 }
 // Decompression
