@@ -14,6 +14,8 @@
 #include <string>
 #include <vector>
 #include <bitset>
+#include <array>
+#include <algorithm>
 
 // Node class for the Huffman Tree
 class Node

@@ -7,25 +7,7 @@
 
 constexpr int NUM_CHAR = 256; // 256 possible characters
 
-// Node structure for Huffman Tree
-struct Node
-{
-	unsigned char character;
-	unsigned int frequency;
-	std::shared_ptr<Node> left, right;
 
-	Node(unsigned char ch, unsigned int freq)
-		: character(ch), frequency(freq), left(nullptr), right(nullptr) {}
-
-	// Custom comparator for priority queue
-	struct Compare
-	{
-		bool operator()(const std::shared_ptr<Node> &a, const std::shared_ptr<Node> &b)
-		{
-			return a->frequency > b->frequency;
-		}
-	};
-};
 
 // Function to initialize the frequency table
 void init_frequency(std::array<unsigned int, NUM_CHAR> &frequency)
